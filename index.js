@@ -35,7 +35,7 @@ var formatReply = function(data) {
 
 var getGif = function(callback) {
   giphy_client
-    .search('gifs', { q: giphy.key })
+    .search('gifs', { q: giphy.q })
     .then(response => {
       var totalResponses = response.data.length;
       var responseIndex = Math.floor(Math.random() * 10 + 1) % totalResponses;
