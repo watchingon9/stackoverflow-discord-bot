@@ -1,5 +1,4 @@
 'use strict';
-const express = require('express');
 const discord = require('discord.js');
 const dotenv = require('dotenv');
 const stackexchange = require('stackexchange');
@@ -84,10 +83,3 @@ discord_client.on('message', message => {
 });
 
 discord_client.login(process.env.DISCORD_TOKEN);
-
-/************************
- *  Web Server
- * ********************** */
-const app = express();
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log('Server Up and running'));
