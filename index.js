@@ -1,16 +1,18 @@
 'use strict';
-const Discord = require('discord.js');
+const http = require('http');
+const discord = require('discord.js');
 const dotenv = require('dotenv');
-const StackExchange = require('stackexchange');
-const GphApiClient = require('giphy-js-sdk-core');
-const { discord, stackexchange, giphy } = require('./config.json');
+const stackexchange = require('stackexchange');
+const giphy = require('giphy-js-sdk-core');
+const { _prefix, _q, _filter } = require('./config.json');
 
 dotenv.config();
 
-const discord_client = new Discord.Client();
-const giphy_client = GphApiClient(process.env.GIPHY_KEY);
-const stack_client = new StackExchange({ version: 2.2 });
-const filter = stackexchange.filter;
+/************************
+ *  Stack Exchange
+ * ********************** */
+const stack_client = new stackexchange({ version: 2.2 });
+const filter = _filter;
 filter.key = process.env.STACKEXCHANGE_KEY;
 
 var getStackOverflowData = function(keyword, callback) {
@@ -34,9 +36,13 @@ var formatReply = function(data) {
   return combinedString;
 };
 
-var getGif = function(callback) {
+/************************
+ *  Giphy
+ * ********************** */
+const giphy_client = giphy(process.env.GIPHY_KEY);
+const getGif = function(callback) {
   giphy_client
-    .search('gifs', { q: giphy.q })
+    .search('gifs', { q: _q })
     .then(response => {
       var totalResponses = response.data.length;
       var responseIndex = Math.floor(Math.random() * 10 + 1) % totalResponses;
@@ -47,6 +53,11 @@ var getGif = function(callback) {
     .catch(err => {});
 };
 
+/************************
+ *  Discord
+ * ********************** */
+const discord_client = new discord.Client();
+
 discord_client.once('ready', () => {
   console.log('Ready!');
 });
@@ -56,8 +67,8 @@ discord_client.on('message', message => {
     message.channel.send(
       `Ask me everything about programming\nCommand: !s [language] [specific questions]`
     );
-  } else if (message.content.startsWith(`${discord.prefix}`)) {
-    let keywords = message.content.replace(discord.prefix, '');
+  } else if (message.content.startsWith(`${_prefix}`)) {
+    let keywords = message.content.replace(_prefix, '');
     getStackOverflowData(keywords, results => {
       if (results.length > 0) {
         message.channel.send(formatReply(results));
@@ -73,3 +84,14 @@ discord_client.on('message', message => {
 });
 
 discord_client.login(process.env.DISCORD_TOKEN);
+
+/************************
+ *  Web Server
+ * ********************** */
+const PORT = process.env.PORT || 5000;
+http
+  .createServer(function(req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('Hello World\n');
+  })
+  .listen(PORT, () => console.log(`Server running on port ${PORT}`));

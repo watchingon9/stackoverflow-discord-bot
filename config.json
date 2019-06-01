@@ -1,19 +1,13 @@
 {
-    "discord": {
-        "prefix": "!s"
-    },
-    "stackexchange": {
-        "filter": {
-            "pagesize": 5,
-            "tagged": "C#",
-            "sort": "activity",
-            "order": "desc",
-            "site": "stackoverflow.com",
-            "filter": "!)re8-BB_*cHw7.MHNCti",
-            "accepted": "True"
-        }
-    },
-    "giphy": {
-        "q": "fail"
+    "_prefix": "!s",
+    "_q": "fail",
+    "_filter": {
+        "pagesize": 5,
+        "tagged": "C#",
+        "sort": "activity",
+        "order": "desc",
+        "site": "stackoverflow.com",
+        "filter": "!)re8-BB_*cHw7.MHNCti",
+        "accepted": "True"
     }
 }
