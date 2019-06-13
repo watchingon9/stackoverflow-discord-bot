@@ -6,5 +6,5 @@ Ask me everything about programming
 
 ![Preview](http://i68.tinypic.com/o0z507.jpg)
 
-![Preview](http://i63.tinypic.com/2qxp929.jpg)
+![Preview](http://i66.tinypic.com/2vv57k2.jpg)
 
