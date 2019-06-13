@@ -1,6 +1,5 @@
 {
     "_prefix": "!s",
-    "_q": "fail",
     "_filter": {
         "pagesize": 5,
         "tagged": "C#",
@@ -9,5 +8,38 @@
         "site": "stackoverflow.com",
         "filter": "!)re8-BB_*cHw7.MHNCti",
         "accepted": "True"
-    }
+    },
+    "_replies": [{
+            "giphy": "lazy",
+            "message": "hmmm... why human beings keep asking me stupid questions?"
+        },
+        {
+            "giphy": "vacation",
+            "message": "I'm on vacation now, please call my friend Google to help you ya."
+        },
+        {
+            "giphy": "fail",
+            "message": "um... i think is time to go home."
+        },
+        {
+            "giphy": "confuse",
+            "message": "Huh? What are you talking about?"
+        },
+        {
+            "giphy": "shy",
+            "message": "I've forgotten to tell you that you're so handsome today..."
+        },
+        {
+            "giphy": "cat",
+            "message": ""
+        },
+        {
+            "giphy": "sleepy",
+            "message": "......"
+        },
+        {
+            "giphy": "busy",
+            "message": "Damn busy now..."
+        }
+    ]
 }
