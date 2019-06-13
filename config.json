@@ -1,45 +1,46 @@
 {
-    "_prefix": "!s",
-    "_filter": {
-        "pagesize": 5,
-        "tagged": "C#",
-        "sort": "activity",
-        "order": "desc",
-        "site": "stackoverflow.com",
-        "filter": "!)re8-BB_*cHw7.MHNCti",
-        "accepted": "True"
+  "_prefix": "!s",
+  "_filter": {
+    "pagesize": 5,
+    "tagged": "C#",
+    "sort": "activity",
+    "order": "desc",
+    "site": "stackoverflow.com",
+    "filter": "!)re8-BB_*cHw7.MHNCti",
+    "accepted": "True"
+  },
+  "_replies": [
+    {
+      "giphy": "lazy",
+      "message": "hmmm... why do people keep asking me stupid questions"
     },
-    "_replies": [{
-            "giphy": "lazy",
-            "message": "hmmm... why human beings keep asking me stupid questions?"
-        },
-        {
-            "giphy": "vacation",
-            "message": "I'm on vacation now, please call my friend Google to help you ya."
-        },
-        {
-            "giphy": "fail",
-            "message": "um... i think is time to go home."
-        },
-        {
-            "giphy": "confuse",
-            "message": "Huh? What are you talking about?"
-        },
-        {
-            "giphy": "shy",
-            "message": "I've forgotten to tell you that you're so handsome today..."
-        },
-        {
-            "giphy": "cat",
-            "message": ""
-        },
-        {
-            "giphy": "sleepy",
-            "message": "......"
-        },
-        {
-            "giphy": "busy",
-            "message": "Damn busy now..."
-        }
-    ]
+    {
+      "giphy": "vacation",
+      "message": "I'm on vacation now, please call my friend Google to help you ya."
+    },
+    {
+      "giphy": "fail",
+      "message": "um... i think is time to go home."
+    },
+    {
+      "giphy": "confuse",
+      "message": "Huh? What are you talking about?"
+    },
+    {
+      "giphy": "shy",
+      "message": "I forgot to tell you that you are so handsome today..."
+    },
+    {
+      "giphy": "cat",
+      "message": ""
+    },
+    {
+      "giphy": "sleepy",
+      "message": "......"
+    },
+    {
+      "giphy": "busy",
+      "message": "Damn busy now..."
+    }
+  ]
 }

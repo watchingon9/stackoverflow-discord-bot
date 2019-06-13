@@ -26,7 +26,7 @@ var getStackOverflowData = function(keyword, callback) {
 };
 
 var formatReply = function(data, userId) {
-  let combinedString = `Dear my boss <@${userId}>, here are some of the top results for you:\n\n`;
+  let combinedString = `Dear my boss <@${userId}>, here are some of the best results for you:\n\n`;
   for (let i = 0; i < data.length; i++) {
     combinedString += `Q. ${data[i].title}\nTags: ${data[i].tags.join(
       ' | '
