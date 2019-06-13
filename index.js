@@ -64,7 +64,7 @@ discord_client.once('ready', () => {
 discord_client.on('message', message => {
   const args = message.content.split(' ');
   if (args) {
-    if (args[0] === `${discord.prefix}?`) {
+    if (args[0] === `${_prefix}?`) {
       message.channel.send(
         `Ask me everything about programming\nCommand: !s [language] [specific questions]`
       );
