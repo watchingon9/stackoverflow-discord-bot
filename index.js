@@ -62,23 +62,26 @@ discord_client.once('ready', () => {
 });
 
 discord_client.on('message', message => {
-  if (message.content.startsWith(`${discord.prefix}?`)) {
-    message.channel.send(
-      `Ask me everything about programming\nCommand: !s [language] [specific questions]`
-    );
-  } else if (message.content.startsWith(`${_prefix}`)) {
-    let keywords = message.content.replace(_prefix, '');
-    getStackOverflowData(keywords, results => {
-      if (results.length > 0) {
-        message.channel.send(formatReply(results));
-      } else {
-        getGif(gif => {
-          message.channel.send('um... i think is time to go home.', {
-            files: [gif]
+  const args = message.content.split(' ');
+  if (args) {
+    if (args[0] === `${discord.prefix}?`) {
+      message.channel.send(
+        `Ask me everything about programming\nCommand: !s [language] [specific questions]`
+      );
+    } else if (args[0] === `${_prefix}`) {
+      let keywords = message.content.replace(_prefix, '');
+      getStackOverflowData(keywords, results => {
+        if (results.length > 0) {
+          message.channel.send(formatReply(results));
+        } else {
+          getGif(gif => {
+            message.channel.send('um... i think is time to go home.', {
+              files: [gif]
+            });
           });
-        });
-      }
-    });
+        }
+      });
+    }
   }
 });
 
